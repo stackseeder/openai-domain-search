@@ -17,6 +17,9 @@
                 Find the Organization
             </button>
         </div>
+        @error('domain')
+        <div class="text-red-500">{{ $message }}</div>
+        @enderror
         <div class="mt-5 px-2 font-medium">{{ $organizationName ?? '' }}</div>
     </form>
 </body>

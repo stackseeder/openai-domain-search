@@ -14,6 +14,10 @@ class OrganizationFinderController extends Controller
 
     public function show(Request $request )
     {
+        $request->validate([
+            'domain' => 'required'
+        ]);
+
         return view('display', [
             'organizationName' => $this->getOrganizationName($request->domain),
             'domain' => $request->domain ?? 'Unknown'
