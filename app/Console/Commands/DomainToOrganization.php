@@ -64,6 +64,9 @@ class DomainToOrganization extends Command
         });
 
         $bar->finish();
+        $this->info("\nCopy to sites_converted.csv...");
+        $this->call('generate:sites');
+        $this->info("\nSites converted successfully!");
     }
 
     public function isNotOrgname($orgName)

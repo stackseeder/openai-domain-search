@@ -16,9 +16,12 @@ class GenerateSitesCommand extends Command
         $bar = $this->output->createProgressBar(Site::count());
         $sites = Site::all();
         $siteCollection = $sites->map(function ($site) {
+            $name = preg_match('/^([a-z0-9]+(-[a-z0-9]+)*\.)+[a-z]{2,}$/', $site->name) ? $site->org_name : $site->name;
+            $name = $name === 'Not found' ? $site->name : $name;
+
             return [
                 'id' => $site->csv_id,
-                'name' => $this->isDomainValid($site->name) ? $site->org_name : $site->name,
+                'name' => $name,
                 'domain' => $site->domain,
                 'country' => $site->country,
                 'type' => $site->type,
