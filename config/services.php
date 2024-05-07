@@ -30,5 +30,9 @@ return [
             'channel' => env('SLACK_BOT_USER_DEFAULT_CHANNEL'),
         ],
     ],
+    'openai' => [
+        'secret' => env('OPENAI_API_SECRET'),
+        'endpoint' => env('OPENAI_API_ENDPOINT', 'https://api.openai.com/v1/chat/completions'),
+    ],
 
 ];
