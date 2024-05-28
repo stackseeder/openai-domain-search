@@ -1,6 +1,6 @@
 ## About the project
 
-This is a simple project to get the organization name from domain name. It use the ChatGp API to get the organization name from domain name.
+This is a simple project to get the organization name from domain name. It use the ChatGPT API to get the organization name from domain name.
 
 ### Built With
 
